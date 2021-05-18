@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="input" type="id" />
+    <item name="result" type="id" />
+    <item name="dollar" type="id" />
+    <item name="euro" type="id" />
+    <item name="won" type="id" />
+    <item name="menu_set" type="id" />
+    <item name="mylist" type="id" />
+</resources>
