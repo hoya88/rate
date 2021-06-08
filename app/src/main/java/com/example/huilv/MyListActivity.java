@@ -31,7 +31,7 @@ public class MyListActivity extends ListActivity{
         handler = new Handler() {
             @Override
             public void handleMessage(@NonNull Message msg) {
-                if (msg.what == 7) {
+                if (msg.what == 9) {
                     List<String> list2 = (List<String>) msg.obj;
                     ListAdapter adapter = new ArrayAdapter<String>(MyListActivity.this, android.R.layout.simple_list_item_1, list2);
                     setListAdapter(adapter);

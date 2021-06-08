@@ -2,9 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.huilv">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -14,33 +14,46 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Huilv">
         <activity
+            android:name=".GridViewActivity"
+            android:label="GridViewActivity"
+            android:theme="@style/Theme.Huilv.NoActionBar">
+        </activity>
+        <activity
+            android:name=".List3Activity"
+            android:label="List3Activity"
+            android:theme="@style/Theme.Huilv.NoActionBar">
+        </activity>
+        <activity
+            android:name=".RateCalActivity"
+            android:label="RateCalActivity"
+            android:theme="@style/Theme.AppCompat.Dialog">
+        </activity>
+        <activity
+            android:name=".List2Activity"
+            android:label="@string/title_activity_list2"
+            android:theme="@style/Theme.Huilv.NoActionBar" />
+        <activity
             android:name=".MyListActivity"
             android:label="@string/title_activity_my_list"
-            android:theme="@style/Theme.Huilv.NoActionBar">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
+            android:theme="@style/Theme.Huilv.NoActionBar" />
         <activity
             android:name=".MyRateListActivity"
             android:label="@string/title_activity_my_rate_list"
-            android:theme="@style/Theme.Huilv.NoActionBar">
-        </activity>
-
+            android:theme="@style/Theme.Huilv.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_config"
             android:theme="@style/Theme.Huilv.NoActionBar">
-        </activity>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ConfigActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Huilv.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.Huilv.NoActionBar" />
     </application>
 
 </manifest>

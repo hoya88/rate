@@ -11,9 +11,10 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
-public class MyTask implements Runnable{
+public class MyRate implements Runnable{
     Handler handler;
     String TAG;
 
@@ -21,14 +22,14 @@ public class MyTask implements Runnable{
         handler = new Handler();
         this.handler = h;
     }
-    public void run(){
-        List<String> retList = new ArrayList<String>();
+    @Override
+    public void run() {
         Document document = null;
+        List<HashMap<String,String>> retList = new ArrayList<HashMap<String, String>>();
         try {
-            Thread.sleep(3000);
-            document = Jsoup.connect("https://www.boc.cn/sourcedb/whpj/").get();
+            Thread.sleep(5000);
+            document = Jsoup.connect("https://www.boc.cn/sourcedb/whpj/ ").get();
             Log.i(TAG,"run:title=" + document.title());
-
             Elements table = document.getElementsByTag("table");
             Element table2 = table.get(1);
             Elements tds = table2.getElementsByTag("td");
@@ -38,15 +39,20 @@ public class MyTask implements Runnable{
                 String str1 = td1.text();
                 String val = td2.text();
                 Log.i(TAG,"run:" + str1 + "==>" + val);
-                retList.add(str1 + "==>" + val);
+                HashMap<String,String> map = new HashMap<String, String>();
+                map.put("ItemTitle",str1);
+                map.put("ItemDetail",val);
+                retList.add(map);
             }
-        }catch (IOException | InterruptedException e){
+        }catch (IOException e){
+            e.printStackTrace();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
         Message msg = handler.obtainMessage(9);
         msg.obj = retList;
         handler.sendMessage(msg);
 
     }
+    
 }

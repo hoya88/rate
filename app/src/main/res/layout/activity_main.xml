@@ -43,8 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="openSecond"
-        android:text="Won"
-        />
+        android:text="Won" />
 
     <Button
         android:id="@+id/btn_open_config"
@@ -53,4 +52,12 @@
         android:layout_marginTop="24dp"
         android:onClick="openSecond"
         android:text="config" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:onClick="myClick"
+        android:text="button" />
 </LinearLayout>

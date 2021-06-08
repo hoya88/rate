@@ -7,4 +7,10 @@
     <item name="won" type="id" />
     <item name="menu_set" type="id" />
     <item name="mylist" type="id" />
+    <item name="mylist3" type="id" />
+    <item name="itemTitle" type="id" />
+    <item name="itemDetail" type="id" />
+    <item name="title2" type="id" />
+    <item name="inp2" type="id" />
+    <item name="show2" type="id" />
 </resources>

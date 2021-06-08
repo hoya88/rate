@@ -28,6 +28,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         handler = new Handler() {
             @Override
             public void handleMessage(@NonNull Message msg) {
-                if (msg.what == 7) {
+                if (msg.what == 9) {
                     String str = (String) msg.obj;
                     Log.i(TAG, "handlerMessage:get str=" + str);
                     result.setText(str);
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void click(View btn) {
-        Log.d(TAG, "click: ");
+        Log.i(TAG, "click: ");
 
         float r = 0.0f;
         switch (btn.getId()) {
@@ -99,6 +100,16 @@ public class MainActivity extends AppCompatActivity {
             //进行计算
             //......
             result.setText("1234.4444");
+        }
+    }
+
+    public void myClick(View v){
+        Log.i(TAG,"onClick:click cccccccccc");
+        RateManager manager = new RateManager(this);
+
+        List<RateItem> list = manager.listAll();
+        for (RateItem item : list){
+            Log.i(TAG,"myClick : item" + item);
         }
     }
 
@@ -177,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        Message msg = handler.obtainMessage(7,"from message");
+        Message msg = handler.obtainMessage(9,"from message");
         //msg.obj = "from message";
         handler.sendMessage(msg);
     }
